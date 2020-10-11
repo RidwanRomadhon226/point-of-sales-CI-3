@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Supplier extends CI_Controller
 {
 
   public function index()
   {
     // $this->load->view('dashboard');
-    $this->template->load('template', 'dashboard');
+    $this->template->load('template', 'supplier/supplier_data');
   }
 }
