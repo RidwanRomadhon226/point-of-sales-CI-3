@@ -109,7 +109,7 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                    <a href="<?= base_url('auth/signout') ?>" class="btn btn-danger btn-flat">Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -162,8 +162,14 @@
             </a>
           </li>
           <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-          <li class="header">LABELS</li>
-          <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+
+
+          <?php if ($this->session->userdata('level') == 1) { ?>
+            <li class="header">SETTING</li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+          <?php } ?>
+
+
         </ul>
       </section>
       <!-- /.sidebar -->

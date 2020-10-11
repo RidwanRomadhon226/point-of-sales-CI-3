@@ -6,6 +6,7 @@ class Auth extends CI_Controller
 
   public function index()
   {
+    check_alreadyogin();
     $this->load->view('auth/login');
   }
 
@@ -32,5 +33,12 @@ class Auth extends CI_Controller
         </script>";
       }
     }
+  }
+
+  public function signout()
+  {
+    $params = array('userId', 'level');
+    $this->session->unset_userdata($params);
+    redirect('auth');
   }
 }
